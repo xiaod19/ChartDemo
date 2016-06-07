@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		621045201C9FE739009AA7D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6210451F1C9FE739009AA7D2 /* main.m */; };
+		621045231C9FE739009AA7D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 621045221C9FE739009AA7D2 /* AppDelegate.m */; };
+		621045261C9FE739009AA7D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 621045251C9FE739009AA7D2 /* ViewController.m */; };
+		621045291C9FE739009AA7D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621045271C9FE739009AA7D2 /* Main.storyboard */; };
+		6210452B1C9FE739009AA7D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6210452A1C9FE739009AA7D2 /* Assets.xcassets */; };
+		6210452E1C9FE739009AA7D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6210452C1C9FE739009AA7D2 /* LaunchScreen.storyboard */; };
+		621045391C9FE739009AA7D2 /* XDChartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 621045381C9FE739009AA7D2 /* XDChartDemoTests.m */; };
+		621045441C9FE739009AA7D2 /* XDChartDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 621045431C9FE739009AA7D2 /* XDChartDemoUITests.m */; };
+		621045531C9FE8AB009AA7D2 /* XDCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 621045521C9FE8AB009AA7D2 /* XDCircleChart.m */; };
+		62F0440D1CA12E790000917E /* XDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F0440C1CA12E790000917E /* XDTableViewController.m */; };
+		62F044131CA132EB0000917E /* XDChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F044121CA132EB0000917E /* XDChartViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		621045351C9FE739009AA7D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 621045131C9FE739009AA7D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6210451A1C9FE739009AA7D2;
+			remoteInfo = XDChartDemo;
+		};
+		621045401C9FE739009AA7D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 621045131C9FE739009AA7D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6210451A1C9FE739009AA7D2;
+			remoteInfo = XDChartDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6210451B1C9FE739009AA7D2 /* XDChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6210451F1C9FE739009AA7D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		621045211C9FE739009AA7D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		621045221C9FE739009AA7D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		621045241C9FE739009AA7D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		621045251C9FE739009AA7D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		621045281C9FE739009AA7D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6210452A1C9FE739009AA7D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6210452D1C9FE739009AA7D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6210452F1C9FE739009AA7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621045341C9FE739009AA7D2 /* XDChartDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XDChartDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		621045381C9FE739009AA7D2 /* XDChartDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDChartDemoTests.m; sourceTree = "<group>"; };
+		6210453A1C9FE739009AA7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6210453F1C9FE739009AA7D2 /* XDChartDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XDChartDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		621045431C9FE739009AA7D2 /* XDChartDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDChartDemoUITests.m; sourceTree = "<group>"; };
+		621045451C9FE739009AA7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621045511C9FE8AB009AA7D2 /* XDCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDCircleChart.h; sourceTree = "<group>"; };
+		621045521C9FE8AB009AA7D2 /* XDCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDCircleChart.m; sourceTree = "<group>"; };
+		62F0440B1CA12E790000917E /* XDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDTableViewController.h; sourceTree = "<group>"; };
+		62F0440C1CA12E790000917E /* XDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDTableViewController.m; sourceTree = "<group>"; };
+		62F044111CA132EB0000917E /* XDChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDChartViewController.h; sourceTree = "<group>"; };
+		62F044121CA132EB0000917E /* XDChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDChartViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		621045181C9FE739009AA7D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621045311C9FE739009AA7D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6210453C1C9FE739009AA7D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		621045121C9FE739009AA7D2 = {
+			isa = PBXGroup;
+			children = (
+				6210451D1C9FE739009AA7D2 /* XDChartDemo */,
+				621045371C9FE739009AA7D2 /* XDChartDemoTests */,
+				621045421C9FE739009AA7D2 /* XDChartDemoUITests */,
+				6210451C1C9FE739009AA7D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6210451C1C9FE739009AA7D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6210451B1C9FE739009AA7D2 /* XDChartDemo.app */,
+				621045341C9FE739009AA7D2 /* XDChartDemoTests.xctest */,
+				6210453F1C9FE739009AA7D2 /* XDChartDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6210451D1C9FE739009AA7D2 /* XDChartDemo */ = {
+			isa = PBXGroup;
+			children = (
+				621045211C9FE739009AA7D2 /* AppDelegate.h */,
+				621045221C9FE739009AA7D2 /* AppDelegate.m */,
+				621045241C9FE739009AA7D2 /* ViewController.h */,
+				621045251C9FE739009AA7D2 /* ViewController.m */,
+				62F0440B1CA12E790000917E /* XDTableViewController.h */,
+				62F0440C1CA12E790000917E /* XDTableViewController.m */,
+				62F044111CA132EB0000917E /* XDChartViewController.h */,
+				62F044121CA132EB0000917E /* XDChartViewController.m */,
+				621045511C9FE8AB009AA7D2 /* XDCircleChart.h */,
+				621045521C9FE8AB009AA7D2 /* XDCircleChart.m */,
+				621045271C9FE739009AA7D2 /* Main.storyboard */,
+				6210452A1C9FE739009AA7D2 /* Assets.xcassets */,
+				6210452C1C9FE739009AA7D2 /* LaunchScreen.storyboard */,
+				6210452F1C9FE739009AA7D2 /* Info.plist */,
+				6210451E1C9FE739009AA7D2 /* Supporting Files */,
+			);
+			path = XDChartDemo;
+			sourceTree = "<group>";
+		};
+		6210451E1C9FE739009AA7D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6210451F1C9FE739009AA7D2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		621045371C9FE739009AA7D2 /* XDChartDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				621045381C9FE739009AA7D2 /* XDChartDemoTests.m */,
+				6210453A1C9FE739009AA7D2 /* Info.plist */,
+			);
+			path = XDChartDemoTests;
+			sourceTree = "<group>";
+		};
+		621045421C9FE739009AA7D2 /* XDChartDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				621045431C9FE739009AA7D2 /* XDChartDemoUITests.m */,
+				621045451C9FE739009AA7D2 /* Info.plist */,
+			);
+			path = XDChartDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6210451A1C9FE739009AA7D2 /* XDChartDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 621045481C9FE739009AA7D2 /* Build configuration list for PBXNativeTarget "XDChartDemo" */;
+			buildPhases = (
+				621045171C9FE739009AA7D2 /* Sources */,
+				621045181C9FE739009AA7D2 /* Frameworks */,
+				621045191C9FE739009AA7D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XDChartDemo;
+			productName = XDChartDemo;
+			productReference = 6210451B1C9FE739009AA7D2 /* XDChartDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		621045331C9FE739009AA7D2 /* XDChartDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6210454B1C9FE739009AA7D2 /* Build configuration list for PBXNativeTarget "XDChartDemoTests" */;
+			buildPhases = (
+				621045301C9FE739009AA7D2 /* Sources */,
+				621045311C9FE739009AA7D2 /* Frameworks */,
+				621045321C9FE739009AA7D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				621045361C9FE739009AA7D2 /* PBXTargetDependency */,
+			);
+			name = XDChartDemoTests;
+			productName = XDChartDemoTests;
+			productReference = 621045341C9FE739009AA7D2 /* XDChartDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6210453E1C9FE739009AA7D2 /* XDChartDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6210454E1C9FE739009AA7D2 /* Build configuration list for PBXNativeTarget "XDChartDemoUITests" */;
+			buildPhases = (
+				6210453B1C9FE739009AA7D2 /* Sources */,
+				6210453C1C9FE739009AA7D2 /* Frameworks */,
+				6210453D1C9FE739009AA7D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				621045411C9FE739009AA7D2 /* PBXTargetDependency */,
+			);
+			name = XDChartDemoUITests;
+			productName = XDChartDemoUITests;
+			productReference = 6210453F1C9FE739009AA7D2 /* XDChartDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		621045131C9FE739009AA7D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = XD;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = hxd;
+				TargetAttributes = {
+					6210451A1C9FE739009AA7D2 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					621045331C9FE739009AA7D2 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6210451A1C9FE739009AA7D2;
+					};
+					6210453E1C9FE739009AA7D2 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6210451A1C9FE739009AA7D2;
+					};
+				};
+			};
+			buildConfigurationList = 621045161C9FE739009AA7D2 /* Build configuration list for PBXProject "XDChartDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 621045121C9FE739009AA7D2;
+			productRefGroup = 6210451C1C9FE739009AA7D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6210451A1C9FE739009AA7D2 /* XDChartDemo */,
+				621045331C9FE739009AA7D2 /* XDChartDemoTests */,
+				6210453E1C9FE739009AA7D2 /* XDChartDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		621045191C9FE739009AA7D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6210452E1C9FE739009AA7D2 /* LaunchScreen.storyboard in Resources */,
+				6210452B1C9FE739009AA7D2 /* Assets.xcassets in Resources */,
+				621045291C9FE739009AA7D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621045321C9FE739009AA7D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6210453D1C9FE739009AA7D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		621045171C9FE739009AA7D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621045261C9FE739009AA7D2 /* ViewController.m in Sources */,
+				621045231C9FE739009AA7D2 /* AppDelegate.m in Sources */,
+				621045531C9FE8AB009AA7D2 /* XDCircleChart.m in Sources */,
+				62F044131CA132EB0000917E /* XDChartViewController.m in Sources */,
+				621045201C9FE739009AA7D2 /* main.m in Sources */,
+				62F0440D1CA12E790000917E /* XDTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621045301C9FE739009AA7D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621045391C9FE739009AA7D2 /* XDChartDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6210453B1C9FE739009AA7D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621045441C9FE739009AA7D2 /* XDChartDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		621045361C9FE739009AA7D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6210451A1C9FE739009AA7D2 /* XDChartDemo */;
+			targetProxy = 621045351C9FE739009AA7D2 /* PBXContainerItemProxy */;
+		};
+		621045411C9FE739009AA7D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6210451A1C9FE739009AA7D2 /* XDChartDemo */;
+			targetProxy = 621045401C9FE739009AA7D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		621045271C9FE739009AA7D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				621045281C9FE739009AA7D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6210452C1C9FE739009AA7D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6210452D1C9FE739009AA7D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		621045461C9FE739009AA7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		621045471C9FE739009AA7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		621045491C9FE739009AA7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XDChartDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaodan.XDChartDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6210454A1C9FE739009AA7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XDChartDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaodan.XDChartDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6210454C1C9FE739009AA7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XDChartDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaodan.XDChartDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XDChartDemo.app/XDChartDemo";
+			};
+			name = Debug;
+		};
+		6210454D1C9FE739009AA7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XDChartDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaodan.XDChartDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XDChartDemo.app/XDChartDemo";
+			};
+			name = Release;
+		};
+		6210454F1C9FE739009AA7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XDChartDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaodan.XDChartDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XDChartDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		621045501C9FE739009AA7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XDChartDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xiaodan.XDChartDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XDChartDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		621045161C9FE739009AA7D2 /* Build configuration list for PBXProject "XDChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621045461C9FE739009AA7D2 /* Debug */,
+				621045471C9FE739009AA7D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		621045481C9FE739009AA7D2 /* Build configuration list for PBXNativeTarget "XDChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621045491C9FE739009AA7D2 /* Debug */,
+				6210454A1C9FE739009AA7D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6210454B1C9FE739009AA7D2 /* Build configuration list for PBXNativeTarget "XDChartDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6210454C1C9FE739009AA7D2 /* Debug */,
+				6210454D1C9FE739009AA7D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6210454E1C9FE739009AA7D2 /* Build configuration list for PBXNativeTarget "XDChartDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6210454F1C9FE739009AA7D2 /* Debug */,
+				621045501C9FE739009AA7D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 621045131C9FE739009AA7D2 /* Project object */;
+}
