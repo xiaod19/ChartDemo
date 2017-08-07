@@ -24,7 +24,19 @@
 @property (strong, nonatomic) CAShapeLayer   *circelbackgound;
 
 
+/**
+ 开始渲染
+ */
 - (void)stroke;
+
+/**
+ CircleChart初始化
+
+ @param frame 位置，大小
+ @param total 总进度
+ @param current 当前进度
+ @return return value description
+ */
 - (id) initWithFrame:(CGRect)frame totalValue:(CGFloat)total currentValue:(CGFloat)current;
 
 @end

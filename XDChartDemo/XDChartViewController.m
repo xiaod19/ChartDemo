@@ -24,6 +24,8 @@
     circleChart.countLabelColor = [UIColor colorWithRed:32/255.0 green:32/255.0 blue:205/255.0 alpha:1];
     [circleChart performSelector:@selector(stroke) withObject:nil afterDelay:2];
 //    [circleChart stroke];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {

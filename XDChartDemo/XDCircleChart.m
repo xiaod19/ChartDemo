@@ -38,15 +38,25 @@
                                                                 endAngle:3 * M_PI/2
                                                                clockwise:YES];
 
+        CAGradientLayer *rightGradLayer = [CAGradientLayer layer];
+        rightGradLayer.locations = @[@0.1];
+        [rightGradLayer setColors:@[(id)[UIColor redColor].CGColor,(id)[UIColor yellowColor].CGColor]];
+        rightGradLayer.bounds = CGRectMake(0, 0, 320, 320);
+        rightGradLayer.position = self.center;
+        
+        
         _circel           = [CAShapeLayer layer];
-        _circel.frame     = self.bounds;
+        _circel.position = CGPointMake(50,0);
+        _circel.frame = self.bounds;
         _circel.lineWidth = _lineWidth;
         _circel.path      = circlePath.CGPath;
         _circel.lineCap   = kCALineCapRound;
         _circel.fillColor = [UIColor clearColor].CGColor;
-//        _circel.lineCap   = kCALineCapRound;
-//        _circel.lineJoin  = kCALineJoinRound;
+        _circel.lineCap   = kCALineCapRound;
+        _circel.lineJoin  = kCALineJoinRound;
         _circel.zPosition = 1;
+        _circel.frame = [_circel convertRect:_circel.bounds toLayer:rightGradLayer];
+        rightGradLayer.mask = _circel;
         
         _circelbackgound             = [CAShapeLayer layer];
         _circelbackgound.frame       = self.bounds;
@@ -58,9 +68,9 @@
         _circelbackgound.zPosition   = -1;
         _circelbackgound.strokeEnd   = 1;
  
-        [self.layer addSublayer:_circel];
         [self.layer addSublayer:_circelbackgound];
-        
+        [self.layer addSublayer:rightGradLayer];
+
 
         //进度百分数
         _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0 , frame.size.width, 14)];
@@ -72,14 +82,14 @@
         [self addSubview:_countLabel];
         
         
-    }
+         }
     return self;
 }
 
 - (void)stroke{
     
     _circel.strokeEnd = _current / _total;
-    _circel.strokeColor = [UIColor redColor].CGColor;
+    _circel.strokeColor = [UIColor blackColor].CGColor;
     
     [self animationStart];
 }
@@ -113,16 +123,16 @@
      */
     
     
-//    CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
-//    springAnimation.damping            = 5;//阻尼系数，阻止弹簧伸缩的系数
-//    springAnimation.stiffness          = 100;//刚度系数(劲度系数/弹性系数)
-//    springAnimation.initialVelocity    = 1;//初始速率，动画视图的初始速度大小
-//    springAnimation.mass               = 1;//质量，影响图层运动时
-//    springAnimation.duration           = 0.5;
-//    springAnimation.beginTime          = _duration;
-//    springAnimation.fromValue          = [NSNumber numberWithFloat:1.2f];
-//    springAnimation.toValue            = [NSNumber numberWithFloat:1.0f];
-
+    CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@"strokeEnd"];
+    springAnimation.damping            = 5;//阻尼系数，阻止弹簧伸缩的系数
+    springAnimation.stiffness          = 100;//刚度系数(劲度系数/弹性系数)
+    springAnimation.initialVelocity    = 1;//初始速率，动画视图的初始速度大小
+    springAnimation.mass               = 1;//质量，影响图层运动时
+    springAnimation.duration           = 1.5;
+    springAnimation.beginTime          = 2;
+    springAnimation.fromValue          = [NSNumber numberWithFloat:1.0f];
+    springAnimation.toValue            = [NSNumber numberWithFloat:1.5f];
+    
     
     
     
@@ -134,6 +144,8 @@
     groups.delegate            = self;
     [_circel addAnimation:groups forKey:@"group"];
     
+    
+    
 //    CASpringAnimation *springAnimation2 = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
 //    springAnimation2.damping            = 5;//阻尼系数，阻止弹簧伸缩的系数
 //    springAnimation2.stiffness          = 100;//刚度系数(劲度系数/弹性系数)
@@ -143,16 +155,13 @@
 //    springAnimation2.beginTime          = 2;
 //    springAnimation2.fromValue          = [NSNumber numberWithFloat:1.0f];
 //    springAnimation2.toValue            = [NSNumber numberWithFloat:2.0f];
-//    
-//    
+
+    
 //    CGAffineTransform transform1 = CGAffineTransformIdentity; //create a new transform
 //    transform1 = CGAffineTransformScale(transform1, 1.2, 1.2); //scale by 50%
-//    
-//    
-//    
-//    _circelbackgound.affineTransform = transform1;
-//    
-//    [_circelbackgound addAnimation:springAnimation2 forKey:@"spring"];
+//    _circel.affineTransform = transform1;
+//
+    [_circel addAnimation:springAnimation forKey:@"spring"];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:_duration/100 target:self selector:@selector(labelChange) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];

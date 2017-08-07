@@ -9,7 +9,7 @@
 #import "XDTableViewController.h"
 #import "XDChartViewController.h"
 @interface XDTableViewController ()
-
+@property (strong, nonatomic) NSArray *featureArr;
 @end
 
 @implementation XDTableViewController
@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.featureArr = @[@"环信进度条"];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 
@@ -33,7 +34,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.featureArr.count;
 }
 
 
@@ -45,8 +46,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XDChartViewController *viewController = [[XDChartViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    
+    if (indexPath.row == 0) {
+        /**环信进度条**/
+        XDChartViewController *viewController = [[XDChartViewController alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+
 }
 
 /*
