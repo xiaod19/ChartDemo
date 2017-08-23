@@ -9,7 +9,7 @@
 #import "XDChartViewController.h"
 
 @interface XDChartViewController ()
-
+@property (strong, nonatomic) XDCircleChart *circleChart;
 @end
 
 @implementation XDChartViewController
@@ -18,14 +18,31 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    XDCircleChart *circleChart = [[XDCircleChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH / 2, self.view.bounds.size.height/2) totalValue:100.0 currentValue:60.0];
-    circleChart.center = self.view.center;
-    [self.view addSubview:circleChart];
-    circleChart.countLabelColor = [UIColor colorWithRed:32/255.0 green:32/255.0 blue:205/255.0 alpha:1];
-    [circleChart performSelector:@selector(stroke) withObject:nil afterDelay:2];
-//    [circleChart stroke];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(self.circleChart.frame) + 100, self.view.bounds.size.width - 50, 30)];
+    [self.view addSubview:label];
+    label.text = @"进度";
+    UISlider *slider =  [[UISlider alloc] initWithFrame:CGRectMake(25, CGRectGetMaxY(self.circleChart.frame) + 100, self.view.bounds.size.width - 50, 30)];
+    [self.view addSubview:slider];
+    [slider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)sliderValueChange:(UISlider *)slider
+{
+    NSLog(@"%f",slider.value);
+}
+
+-(void)viewDidAppear:(BOOL)animated{
     
-   
+    [self.circleChart stroke];
+}
+
+-(XDCircleChart *)circleChart{
+    if (_circleChart == nil) {
+        _circleChart = [[XDCircleChart alloc] initWithFrame:CGRectMake(50, 64, self.view.bounds.size.width - 100, 300) totalValue:100.0 currentValue:60.0];
+        _circleChart.countLabelColor = [UIColor colorWithRed:32/255.0 green:32/255.0 blue:205/255.0 alpha:1];
+        [self.view addSubview:_circleChart];
+    }
+    return _circleChart;
 }
 
 - (void)didReceiveMemoryWarning {

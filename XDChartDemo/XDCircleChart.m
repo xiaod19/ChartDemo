@@ -30,10 +30,10 @@
         _lineWidth = 30.0;
         _countLabelColor = [UIColor blackColor];
         CGFloat position_x = frame.size.width/2;
-        
-        
-        UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:self.center
-                                                                  radius:position_x
+        CGFloat position_y = frame.size.height/2;
+        CGPoint pointCenter = CGPointMake(position_x, position_y);
+        UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:pointCenter
+                                                                  radius:position_x > position_y ? position_y:position_x - _lineWidth
                                                               startAngle: - M_PI/2
                                                                 endAngle:3 * M_PI/2
                                                                clockwise:YES];
@@ -41,12 +41,12 @@
         CAGradientLayer *rightGradLayer = [CAGradientLayer layer];
         rightGradLayer.locations = @[@0.1];
         [rightGradLayer setColors:@[(id)[UIColor redColor].CGColor,(id)[UIColor yellowColor].CGColor]];
-        rightGradLayer.bounds = CGRectMake(0, 0, 320, 320);
-        rightGradLayer.position = self.center;
+        rightGradLayer.bounds   = CGRectMake(0, 0, 320, 320);
+        rightGradLayer.position = pointCenter;
         
         
         _circel           = [CAShapeLayer layer];
-        _circel.position = CGPointMake(50,0);
+        _circel.position  = CGPointMake(50,0);
         _circel.frame = self.bounds;
         _circel.lineWidth = _lineWidth;
         _circel.path      = circlePath.CGPath;
@@ -70,20 +70,25 @@
  
         [self.layer addSublayer:_circelbackgound];
         [self.layer addSublayer:rightGradLayer];
-
+        
 
         //进度百分数
-        _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0 , frame.size.width, 14)];
+        _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0 , frame.size.width, 16)];
         _countLabel.textAlignment = NSTextAlignmentCenter;
-        _countLabel.center = self.center;
+        _countLabel.center = pointCenter;
         _countLabel.font = [UIFont boldSystemFontOfSize:15];
         _countLabel.textColor = _countLabelColor;
         _countLabel.text = [NSString stringWithFormat:@"%.0f%%",0.0];
         [self addSubview:_countLabel];
         
         
-         }
+    }
     return self;
+}
+
+-(void)setCountLabelColor:(UIColor *)countLabelColor{
+    _countLabelColor = countLabelColor;
+    _countLabel.textColor = _countLabelColor;
 }
 
 - (void)stroke{
@@ -104,7 +109,7 @@
     pathAnimation.timingFunction    = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     pathAnimation.duration          = _duration;
     pathAnimation.fromValue         = [NSNumber numberWithFloat:0];
-    pathAnimation.toValue           = [NSNumber numberWithFloat:0.6];
+    pathAnimation.toValue           = [NSNumber numberWithFloat:0.6f];
  
     
     CABasicAnimation *narrowAnimation   = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
@@ -112,7 +117,6 @@
     narrowAnimation.fromValue           = [NSNumber numberWithFloat:0.5f];
     narrowAnimation.duration            = _duration;
     narrowAnimation.removedOnCompletion = NO;
-    narrowAnimation.delegate            = self;
     narrowAnimation.toValue             = [NSNumber numberWithFloat:1.0f];
     narrowAnimation.fillMode            = kCAFillModeForwards;
     /*
@@ -124,26 +128,14 @@
     
     
     CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@"strokeEnd"];
-    springAnimation.damping            = 5;//阻尼系数，阻止弹簧伸缩的系数
+    springAnimation.damping            = 10;//阻尼系数，阻止弹簧伸缩的系数
     springAnimation.stiffness          = 100;//刚度系数(劲度系数/弹性系数)
     springAnimation.initialVelocity    = 1;//初始速率，动画视图的初始速度大小
     springAnimation.mass               = 1;//质量，影响图层运动时
-    springAnimation.duration           = 1.5;
-    springAnimation.beginTime          = 2;
-    springAnimation.fromValue          = [NSNumber numberWithFloat:1.0f];
-    springAnimation.toValue            = [NSNumber numberWithFloat:1.5f];
-    
-    
-    
-    
-    CAAnimationGroup *groups   = [CAAnimationGroup animation];
-    groups.animations          = @[pathAnimation];
-    groups.duration            = _duration + 0.5;
-    groups.removedOnCompletion = NO;
-    groups.fillMode            = kCAFillModeForwards;
-    groups.delegate            = self;
-    [_circel addAnimation:groups forKey:@"group"];
-    
+    springAnimation.duration           = 0.8;
+    springAnimation.beginTime          =  _duration - 0.1;
+    springAnimation.fromValue          = [NSNumber numberWithFloat:0.63f];
+    springAnimation.toValue            = [NSNumber numberWithFloat:0.6f];
     
     
 //    CASpringAnimation *springAnimation2 = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
@@ -151,17 +143,28 @@
 //    springAnimation2.stiffness          = 100;//刚度系数(劲度系数/弹性系数)
 //    springAnimation2.initialVelocity    = 1;//初始速率，动画视图的初始速度大小
 //    springAnimation2.mass               = 1;//质量，影响图层运动时
-//    springAnimation2.duration           = 1.5;
+//    springAnimation2.duration           = 1.5f;
 //    springAnimation2.beginTime          = 2;
 //    springAnimation2.fromValue          = [NSNumber numberWithFloat:1.0f];
-//    springAnimation2.toValue            = [NSNumber numberWithFloat:2.0f];
+//    springAnimation2.toValue            = [NSNumber numberWithFloat:1.5f];
+    
+    CAAnimationGroup *groups   = [CAAnimationGroup animation];
+    groups.animations          = @[pathAnimation,springAnimation];
+    groups.duration            = _duration + 1;
+    groups.removedOnCompletion = NO;
+    groups.fillMode            = kCAFillModeForwards;
+    [_circel addAnimation:groups forKey:@"group"];
+    
+    
+    
+
 
     
 //    CGAffineTransform transform1 = CGAffineTransformIdentity; //create a new transform
 //    transform1 = CGAffineTransformScale(transform1, 1.2, 1.2); //scale by 50%
 //    _circel.affineTransform = transform1;
 //
-    [_circel addAnimation:springAnimation forKey:@"spring"];
+//    [_circel addAnimation:springAnimation2 forKey:@"spring"];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:_duration/100 target:self selector:@selector(labelChange) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
